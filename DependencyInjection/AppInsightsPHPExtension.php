@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Azure\ApplicationInsights\Extension;
+namespace AppInsightsPHP\Symfony\AppInsightsPHPBundle\DependencyInjection;
 
 use App\Azure\ApplicationInsights\Handler\AzureAppInsightsTraceHandler;
 use AppInsightsPHP\Client\Client;
