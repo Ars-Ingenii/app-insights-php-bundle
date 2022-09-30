@@ -45,5 +45,12 @@
         "cs:php:fix": [
             "php-cs-fixer fix"
         ]
-    }
+    },
+    "repositories":
+    [
+        {
+            "type": "git",
+            "url": "git@github.com:Ars-Ingenii/AppInsightsPhpclient.git"
+        }
+    ]
 }
