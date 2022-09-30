@@ -21,7 +21,7 @@
     "require": {
         "php": "^7.3 || ~8.0 || ~8.1",
         "app-insights-php/monolog-handler": "^0.2.3",
-        "app-insights-php/client": "1.0",
+        "app-insights-php/client": "^0.2.7",
         "symfony/framework-bundle": "^3.4|^4.0|^4.4|^5.0|^5.1|^6.0",
         "guzzlehttp/guzzle": "^7.4",
         "twig/twig": "^1.2|^2|^3"
@@ -45,12 +45,5 @@
         "cs:php:fix": [
             "php-cs-fixer fix"
         ]
-    },
-    "repositories":
-    [
-        {
-            "type": "git",
-            "url": "git@github.com:Ars-Ingenii/AppInsightsPhpClient.git"
-        }
-    ]
+    }
 }
