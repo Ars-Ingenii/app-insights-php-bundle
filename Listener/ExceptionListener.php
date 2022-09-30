@@ -24,9 +24,22 @@ final class ExceptionListener implements EventSubscriberInterface
 
     private $exceptionLogged;
 
-    public function __construct(Client $telemetryClient)
-    {
+    private $application;
+
+    private $environment;
+
+    private $exe;
+
+    public function __construct(
+        Client $telemetryClient,
+        string $application,
+        string $environment,
+        string $exe
+    ) {
         $this->telemetryClient = $telemetryClient;
+        $this->application = $application;
+        $this->environment = $environment;
+        $this->exe = $exe;
         $this->exceptionLogged = false;
     }
 
@@ -52,7 +65,15 @@ final class ExceptionListener implements EventSubscriberInterface
             return;
         }
 
-        $this->telemetryClient->trackException($event->getThrowable());
+        $this->telemetryClient->trackException(
+            $event->getThrowable(),
+            [
+                'application' => $this->application,
+                'environment' => $this->environment,
+                'exe' => $this->application,
+                'requestId' => $event->getRequest()->attributes->get('X-Request-Id')
+            ]
+        );
         $this->exceptionLogged = true;
     }
 }
