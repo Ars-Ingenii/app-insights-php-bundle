@@ -50,7 +50,7 @@
     [
         {
             "type": "git",
-            "url": "git@github.com:Ars-Ingenii/AppInsightsPhpclient.git"
+            "url": "git@github.com:Ars-Ingenii/AppInsightsPhpClient.git"
         }
     ]
 }
