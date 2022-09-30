@@ -21,7 +21,7 @@ use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class AppInsightsExtension extends Extension
+class AppInsightsPHPExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
