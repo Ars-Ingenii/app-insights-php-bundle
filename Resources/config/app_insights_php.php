@@ -20,15 +20,7 @@ return static function (ContainerConfigurator $containerConfigurator) : void {
     $services = $containerConfigurator->services();
 
     $services->set('app_insights_php.telemetry.factory', ClientFactory::class)
-        ->args([
-            '%app_insights_php.instrumentation_key%',
-            '',
-            '',
-            '',
-            '%env(MICROSOFT_APPINSIGHTS_APPLICATION)%',
-            '%env(APP_ENV)%',
-            '%env(MICROSOFT_APPINSIGHTS_EXE)%',
-        ]);
+        ->args(['%app_insights_php.instrumentation_key%', '', '', '']);
 
     $services->set('app_insights_php.telemetry', Client::class)
         ->public()
