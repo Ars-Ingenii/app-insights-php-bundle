@@ -50,16 +50,16 @@
         },
         {
             "name": "app-insights-php/client",
-            "version": "0.2.11",
+            "version": "1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/app-insights-php/client.git",
-                "reference": "3d1f43b684e31f076422f9732317df760c58bb40"
+                "url": "https://github.com:Ars-Ingenii/AppInsightsPhpClient.git",
+                "reference": "04c0994d360bab7f46ce87771cf8cd5ebc1e1e92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/app-insights-php/client/zipball/3d1f43b684e31f076422f9732317df760c58bb40",
-                "reference": "3d1f43b684e31f076422f9732317df760c58bb40",
+                "url": "https://api.github.com/repos/Ars-Ingenii/AppInsightsPhpClient/zipball/04c0994d360bab7f46ce87771cf8cd5ebc1e1e92",
+                "reference": "04c0994d360bab7f46ce87771cf8cd5ebc1e1e92",
                 "shasum": ""
             },
             "require": {
