@@ -22,7 +22,12 @@ return static function (ContainerConfigurator $containerConfigurator) : void {
 
     $services->set('app_insights_php.symfony.listener.http_request', HttpRequestListener::class)
         ->tag('kernel.event_subscriber', [])
-        ->args([new Reference('app_insights_php.telemetry')]);
+        ->args([
+            new Reference('app_insights_php.telemetry'),
+            '%env(MICROSOFT_APPINSIGHTS_APPLICATION)%',
+            '%env(APP_ENV)%',
+            '%env(MICROSOFT_APPINSIGHTS_EXE)%',
+        ]);
 
     $services->set('app_insights_php.symfony.listener.kernel_terminate', KernelTerminateListener::class)
         ->tag('kernel.event_subscriber', [])
@@ -30,5 +35,10 @@ return static function (ContainerConfigurator $containerConfigurator) : void {
 
     $services->set('app_insights_php.symfony.listener.exception', ExceptionListener::class)
         ->tag('kernel.event_subscriber', [])
-        ->args([new Reference('app_insights_php.telemetry'), []]);
+        ->args([
+            new Reference('app_insights_php.telemetry'),
+            '%env(MICROSOFT_APPINSIGHTS_APPLICATION)%',
+            '%env(APP_ENV)%',
+            '%env(MICROSOFT_APPINSIGHTS_EXE)%',
+        ]);
 };
