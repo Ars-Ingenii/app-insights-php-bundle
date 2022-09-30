@@ -30,9 +30,22 @@ final class HttpRequestListener implements EventSubscriberInterface
 
     private $requestStartTimeMs;
 
-    public function __construct(Client $telemetryClient)
-    {
+    private $application;
+
+    private $environment;
+
+    private $exe;
+
+    public function __construct(
+        Client $telemetryClient,
+        string $application,
+        string $environment,
+        string $exe
+    ) {
         $this->telemetryClient = $telemetryClient;
+        $this->application = $application;
+        $this->environment = $environment;
+        $this->exe = $exe;
     }
 
     public static function getSubscribedEvents()
@@ -111,6 +124,10 @@ final class HttpRequestListener implements EventSubscriberInterface
                 ],
                 'query' => $request->query->all(),
                 'clientIps' => $request->getClientIps(),
+                'application' => $this->application,
+                'environment' => $this->environment,
+                'exe' => $this->exe,
+                'requestId' => $request->attributes->get('X-Request-Id')
             ]))()
         );
     }
